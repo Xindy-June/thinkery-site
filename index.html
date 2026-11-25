@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>
+    /* Pre-paint default: English, unless ?lang=zh or a saved Chinese choice. */
+    (function () {
+      var d = document.documentElement, q = null, s = null;
+      try { q = new URLSearchParams(location.search).get("lang"); } catch (e) {}
+      try { s = localStorage.getItem("thinkery-site-lang"); } catch (e) {}
+      var lang = (q === "zh" || q === "en") ? q : (s === "zh" || s === "en" ? s : "en");
+      d.lang = lang === "zh" ? "zh-Hans" : "en";
+      d.classList.add("js");
+      if (lang === "zh") {
+        d.classList.add("lang-pending");
+        setTimeout(function () { d.classList.remove("lang-pending"); }, 1200);
+      }
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f5f7">
+  <title data-i18n="Thinkery 灵感工坊 — 灵感一闪，落笔安放|Thinkery — An idea, quietly kept">Thinkery — An idea, quietly kept</title>
+  <meta name="description" data-i18n-meta="Thinkery 是一款为灵感而生的笔记 App。打开即写、轻松整理、随时回顾，在 iPhone、iPad 与 Mac 上，让每个想法都有自己的位置。|Thinkery is a notes app made for ideas. Open and write, organize without effort, revisit any time — on iPhone, iPad and Mac, every thought has its place." content="Thinkery is a notes app made for ideas. Open and write, organize without effort, revisit any time — on iPhone, iPad and Mac, every thought has its place.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/app-icon.png">
+  <script src="script.js" defer></script>
+</head>
+<body class="home-page">
+  <a class="skip-link" href="#main" data-i18n="跳到主要内容|Skip to content">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <div class="nav-shell">
+      <a class="site-brand" href="index.html" data-i18n-aria="Thinkery 首页|Thinkery home" aria-label="Thinkery home">
+        <img src="assets/app-icon.png" alt="" width="28" height="28">
+        <span>Thinkery</span>
+      </a>
+      <nav class="site-nav" data-nav data-i18n-aria="主要导航|Main navigation" aria-label="Main navigation">
+        <a href="#capture" data-i18n="记录|Capture">Capture</a>
+        <a href="#tags" data-i18n="标签板|Tag Boards">Tag Boards</a>
+        <a href="#desktop" data-i18n="桌面端|Desktop">Desktop</a>
+        <a href="#privacy" data-i18n="隐私|Privacy">Privacy</a>
+        <a href="support.html" data-i18n="支持|Support">Support</a>
+      </nav>
+      <a class="nav-action" href="#details"><span data-i18n="了解产品|Explore the app">Explore the app</span> <span aria-hidden="true">↗</span></a>
+      <button class="lang-switch" type="button" data-lang-switch data-i18n="EN|中文" data-i18n-aria="切换到英文|Switch to Chinese" aria-label="Switch to Chinese">中文</button>
+      <button class="menu-toggle" type="button" data-i18n-aria="打开导航|Open menu" aria-label="Open menu" aria-expanded="false" data-menu-toggle>
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="product-kicker"><span class="status-light"></span> <span data-i18n="THINKERY · 灵感工坊|THINKERY · NOTES FOR IDEAS">THINKERY · NOTES FOR IDEAS</span></p>
+        <h1 id="hero-title"><span data-i18n="灵感一闪。|An idea appears.">An idea appears.</span><br><span class="soft"><span data-i18n="落笔，|Write it down.">Write it down.</span><span class="hero-rest" data-i18n="安放。|Let it rest.">Let it rest.</span></span></h1>
+        <p class="hero-lead"><span data-i18n="为每一个不想被打断的思路而生。|For every thought that refuses to be interrupted.">For every thought that refuses to be interrupted.</span><br><span data-i18n="打开即写，让记录回到最简单的一步。|Open and write — note-taking back to its simplest.">Open and write — note-taking back to its simplest.</span></p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="#capture"><span data-i18n="看看它如何工作|See how it works">See how it works</span> <span aria-hidden="true">↓</span></a>
+        </div>
+        <p class="platform-note">FOR IPHONE · IPAD · MAC</p>
+      </div>
+
+      <div class="hero-stage" data-i18n-aria="Thinkery iPhone 产品界面|Thinkery on iPhone" aria-label="Thinkery on iPhone">
+        <div class="hero-wordmark" aria-hidden="true">THINKERY</div>
+        <div class="stage-glow" aria-hidden="true"></div>
+        <div class="instrument-note instrument-note-left" aria-hidden="true">
+          <span>REC—01</span><i></i><small>IDEAS, KEPT.</small>
+        </div>
+        <div class="instrument-note instrument-note-right" aria-hidden="true">
+          <span class="status-light"></span><small>READY TO WRITE</small>
+        </div>
+        <div class="phone phone-hero" data-tilt>
+          <span class="phone-button phone-button-action" aria-hidden="true"></span>
+          <span class="phone-button phone-button-volume" aria-hidden="true"></span>
+          <div class="phone-screen">
+            <img data-i18n-src="assets/screen-editor.webp|assets/screen-editor-en.webp" src="assets/screen-editor-en.webp" data-i18n-alt="Thinkery 打开即进入编辑状态，文字、标签与格式工具都在同一篇笔记中|Thinkery opens straight into the editor — text, tags and formatting tools in one note" alt="Thinkery opens straight into the editor — text, tags and formatting tools in one note" width="750" height="1630" fetchpriority="high">
+          </div>
+        </div>
+        <div class="stage-baseline" aria-hidden="true"><span></span><i></i><span></span></div>
+      </div>
+    </section>
+
+    <section class="manifesto section-shell" id="capture" data-reveal>
+      <p class="section-index">01 / CAPTURE</p>
+      <h2><span data-i18n="少一点管理。|Less managing.">Less managing.</span><br><span data-i18n="多一点想法。|More thinking.">More thinking.</span></h2>
+      <p class="section-lead"><span data-i18n="不必先建笔记本，也不必先想好放在哪里。|No notebook to set up, no place to decide in advance.">No notebook to set up, no place to decide in advance.</span><br><span data-i18n="Thinkery 把「想到」与「记下」之间，压缩成一次打开。|Thinkery closes the gap between having a thought and writing it down to a single tap.">Thinkery closes the gap between having a thought and writing it down to a single tap.</span></p>
+      <div class="principles">
+        <article>
+          <span class="principle-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32"><path d="M8 5h12l5 5v17H8z"/><path d="M20 5v6h5M12 17h9M12 22h7"/></svg>
+          </span>
+          <h3 data-i18n="打开，就是新的一篇|Open, and it's a new note">Open, and it's a new note</h3>
+          <p data-i18n="冷启动直接进入编辑，键盘同时就绪。灵感不用排队。|A cold launch drops you straight into the editor with the keyboard ready. Ideas never wait in line.">A cold launch drops you straight into the editor with the keyboard ready. Ideas never wait in line.</p>
+        </article>
+        <article>
+          <span class="principle-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32"><path d="M6 9h20M6 16h20M6 23h20"/><path d="m17 5 3 4-3 4M17 12l3 4-3 4"/></svg>
+          </span>
+          <h3 data-i18n="形式，跟着想法走|Let the idea set the form">Let the idea set the form</h3>
+          <p data-i18n="文字、图片、录音与文件共处一页，Markdown 边写边显。|Text, photos, recordings and files share one page, with Markdown as you write.">Text, photos, recordings and files share one page, with Markdown as you write.</p>
+        </article>
+        <article>
+          <span class="principle-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32"><path d="M7 8h18v19H7z"/><path d="M11 4h10v8H11zM11 19h10"/></svg>
+          </span>
+          <h3 data-i18n="现在写下，以后再整理|Write now, sort later">Write now, sort later</h3>
+          <p data-i18n="标签自然沉淀，不让分类打断此刻的思路。|Tags settle in naturally, without letting organizing interrupt the moment.">Tags settle in naturally, without letting organizing interrupt the moment.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="rediscover" id="tags">
+      <div class="rediscover-inner section-shell">
+        <div class="rediscover-copy" data-reveal>
+          <p class="section-index section-index-dark">02 / TAG BOARDS</p>
+          <h2><span data-i18n="零碎的想法，|Fragments of thought,">Fragments of thought,</span><br><span class="soft" data-i18n="自由组合。|freely combined.">freely combined.</span></h2>
+          <p data-i18n="不必一开始就想好结构。给灵感贴上标签，再把它放进不同的标签板；同一篇笔记可以出现在多个板里，随新的思路重新排列、组合。|No structure needed up front. Tag an idea, then place it on different boards. One note can live on several boards, rearranged as new connections appear.">No structure needed up front. Tag an idea, then place it on different boards. One note can live on several boards, rearranged as new connections appear.</p>
+          <ul class="feature-list feature-list-dark">
+            <li><span class="num">01</span><span data-i18n="一篇笔记，可以同时属于多个标签板|One note can belong to several boards">One note can belong to several boards</span></li>
+            <li><span class="num">02</span><span data-i18n="拖动整理，把零散片段排成新的顺序|Drag to rearrange fragments into a new order">Drag to rearrange fragments into a new order</span></li>
+            <li><span class="num">03</span><span data-i18n="换个标签板，就换一种看待想法的方式|A different board, a different way to see your ideas">A different board, a different way to see your ideas</span></li>
+          </ul>
+        </div>
+        <div class="rediscover-device" data-reveal>
+          <div class="orbit-copy" aria-hidden="true">TAG · CONNECT · RECOMBINE · TAG · CONNECT · RECOMBINE ·</div>
+          <div class="phone phone-dark">
+            <div class="phone-screen">
+              <img data-i18n-src="assets/screen-tags.webp|assets/screen-tags-en.webp" src="assets/screen-tags-en.webp" data-i18n-alt="Thinkery 标签板将同一组零碎笔记按不同主题自由组织|Thinkery tag boards freely organize the same fragments under different themes" alt="Thinkery tag boards freely organize the same fragments under different themes" width="750" height="1631" loading="lazy">
+            </div>
+          </div>
+          <div class="device-caption" aria-hidden="true"><span class="status-light"></span> FRAGMENTS, RECOMBINED.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="craft section-shell" id="design">
+      <div class="section-heading" data-reveal>
+        <p class="section-index">03 / CRAFT</p>
+        <h2><span data-i18n="数字灵感，|Digital ideas,">Digital ideas,</span><br><span data-i18n="也有真实的触感。|with a real feel.">with a real feel.</span></h2>
+        <p class="section-lead"><span data-i18n="拉丝金属、半透明亚克力与恰到好处的机械反馈。|Brushed metal, translucent acrylic and just-right mechanical feedback.">Brushed metal, translucent acrylic and just-right mechanical feedback.</span><br><span data-i18n="细节存在，却不喧哗。|Present in detail, never loud.">Present in detail, never loud.</span></p>
+      </div>
+
+      <div class="craft-grid">
+        <article class="craft-card craft-card-tags" data-reveal>
+          <div class="craft-card-copy">
+            <p class="micro-label">REDISCOVER</p>
+            <h3><span data-i18n="写下的，|What you write,">What you write,</span><br><span data-i18n="还会再次找到你。|finds its way back.">finds its way back.</span></h3>
+            <p data-i18n="笔记不是写完就沉底的档案。随机回顾一条旧灵感，也可以按标签、文字和日期，回到某一个时刻。|Notes aren't archives that sink to the bottom. Revisit an old thought at random, or find a moment by tag, text or date.">Notes aren't archives that sink to the bottom. Revisit an old thought at random, or find a moment by tag, text or date.</p>
+          </div>
+          <div class="card-phone-wrap">
+            <div class="phone phone-small">
+              <div class="phone-screen"><img data-i18n-src="assets/screen-notes.webp|assets/screen-notes-en.webp" src="assets/screen-notes-en.webp" data-i18n-alt="Thinkery 笔记浏览与回顾界面，生活记录、创作提纲与短句按标签清晰排列|Thinkery notes browsing — daily records, outlines and short lines organized by tag" alt="Thinkery notes browsing — daily records, outlines and short lines organized by tag" width="750" height="1631" loading="lazy"></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="craft-card craft-card-media" data-reveal>
+          <div class="craft-card-copy">
+            <p class="micro-label">MEDIA LIBRARY</p>
+            <h3><span data-i18n="不止文字。|More than words.">More than words.</span><br><span data-i18n="声音也值得珍藏。|Sounds are worth keeping, too.">Sounds are worth keeping, too.</span></h3>
+            <p data-i18n="图片、录音与文件都有自己的媒体库。磁带式播放器，让每段声音都带一点仪式感。|Photos, recordings and files each have a media library. A tape-style player gives every sound a little ritual.">Photos, recordings and files each have a media library. A tape-style player gives every sound a little ritual.</p>
+          </div>
+          <div class="card-phone-wrap card-phone-wrap-media">
+            <div class="phone phone-small phone-small-dark">
+              <div class="phone-screen"><img data-i18n-src="assets/screen-cassette.webp|assets/screen-cassette-en.webp" src="assets/screen-cassette-en.webp" data-i18n-alt="Thinkery 以复古磁带机播放笔记中的录音|Thinkery plays a note's recording on a retro cassette deck" alt="Thinkery plays a note's recording on a retro cassette deck" width="750" height="1626" loading="lazy"></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="desktop-feature" id="desktop" aria-labelledby="desktop-title">
+      <div class="section-shell">
+        <div class="desktop-heading" data-reveal>
+          <p class="section-index">04 / EVERYWHERE</p>
+          <h2 id="desktop-title"><span data-i18n="从口袋，到桌面。|From your pocket to your desk.">From your pocket to your desk.</span><br><span data-i18n="思路不必换轨。|Your train of thought stays on track.">Your train of thought stays on track.</span></h2>
+          <p data-i18n="在 iPhone 上接住一闪而过，在 Mac 上继续展开。多栏、多标签与分屏，让零散想法慢慢长成完整作品。|Catch a fleeting thought on iPhone, develop it on Mac. Columns, tabs and split views let scattered ideas grow into finished work.">Catch a fleeting thought on iPhone, develop it on Mac. Columns, tabs and split views let scattered ideas grow into finished work.</p>
+        </div>
+
+        <div class="mac-scene" data-reveal data-i18n-aria="Thinkery Mac 桌面版样机|Thinkery desktop on Mac" aria-label="Thinkery desktop on Mac">
+          <div class="macbook">
+            <div class="macbook-lid">
+              <div class="mac-camera" aria-hidden="true"></div>
+              <div class="desktop-ui">
+                <img class="desktop-screenshot" data-i18n-src="assets/screen-desktop.webp|assets/screen-desktop-en.webp" src="assets/screen-desktop-en.webp" data-i18n-alt="最新 Thinkery 桌面版，以笔记列表与多标签编辑区同时展开示例笔记|The latest Thinkery desktop, with a note list and a multi-tab editor side by side" alt="The latest Thinkery desktop, with a note list and a multi-tab editor side by side" width="2000" height="1289" loading="lazy">
+              </div>
+            </div>
+            <div class="macbook-base" aria-hidden="true"><span></span></div>
+          </div>
+          <p class="sync-caption"><span class="status-light"></span> <span data-i18n="可选的 iCloud 同步 · 数据保存在你的私人账户中|Optional iCloud sync · your data stays in your private account">Optional iCloud sync · your data stays in your private account</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="privacy-feature" id="privacy">
+      <div class="privacy-inner section-shell" data-reveal>
+        <p class="section-index">05 / PRIVACY</p>
+        <h2><span data-i18n="你的灵感，|Your ideas,">Your ideas,</span><br><span data-i18n="只属于你。|yours alone.">yours alone.</span></h2>
+        <p class="section-lead"><span data-i18n="没有账号，没有广告，没有第三方统计。|No accounts, no ads, no third-party analytics.">No accounts, no ads, no third-party analytics.</span><br><span data-i18n="笔记默认留在本机；开启同步后，也只进入你自己的 iCloud。|Notes stay on your device; with sync on, they only go to your own iCloud.">Notes stay on your device; with sync on, they only go to your own iCloud.</span></p>
+        <div class="privacy-points">
+          <div><strong>0</strong><span data-i18n="第三方追踪 SDK|third-party tracking SDKs">third-party tracking SDKs</span></div>
+          <div><strong>100%</strong><span data-i18n="内容归你所有|yours to keep">yours to keep</span></div>
+          <div><strong>MD</strong><span data-i18n="完整 Markdown 导出|full Markdown export">full Markdown export</span></div>
+        </div>
+        <a class="button button-outline" href="privacy.html"><span data-i18n="阅读隐私政策|Read the privacy policy">Read the privacy policy</span> <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="product-details section-shell" id="details">
+      <div class="details-heading" data-reveal>
+        <p class="section-index">THINKERY / AT A GLANCE</p>
+        <h2><span data-i18n="简单，|Simple,">Simple,</span><br><span data-i18n="但足够完整。|but complete.">but complete.</span></h2>
+      </div>
+      <div class="details-grid" data-reveal>
+        <article><span data-i18n="平台|Platforms">Platforms</span><h3>iPhone · iPad · Mac</h3><p>iOS / iPadOS 17.6+<br>macOS 15.4+</p></article>
+        <article><span data-i18n="购买|Purchase">Purchase</span><h3 data-i18n="一次买断|One-time purchase">One-time purchase</h3><p data-i18n="无订阅|No subscription">No subscription</p><p data-i18n="无广告|No ads">No ads</p></article>
+        <article><span data-i18n="语言|Languages">Languages</span><h3 data-i18n="五种语言|Five languages">Five languages</h3><p>简体 · 繁體 · English<br>日本語 · Español</p></article>
+        <article><span data-i18n="数据|Your data">Your data</span><h3 data-i18n="自由带走|Take it with you">Take it with you</h3><p data-i18n="Markdown 与附件|Markdown and attachments">Markdown and attachments</p><p data-i18n="完整导出|exported in full">exported in full</p></article>
+      </div>
+    </section>
+
+    <section class="closing section-shell" data-reveal>
+      <div class="closing-mark"><img src="assets/app-icon.png" alt="" width="72" height="72" loading="lazy"></div>
+      <p class="micro-label">THE NEXT IDEA IS YOURS</p>
+      <h2><span data-i18n="快记下你的|Write down your">Write down your</span><br class="mobile-break"><span data-i18n="灵感吧！|next idea!">next idea!</span></h2>
+      <a class="button button-dark" href="support.html"><span data-i18n="认识 Thinkery|Get to know Thinkery">Get to know Thinkery</span> <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-shell">
+      <div class="footer-top">
+        <a class="site-brand" href="index.html"><img src="assets/app-icon.png" alt="" width="28" height="28"><span>Thinkery</span></a>
+        <p data-i18n="把转瞬即逝，变成触手可及。|Turning fleeting moments into something within reach.">Turning fleeting moments into something within reach.</p>
+      </div>
+      <div class="footer-links">
+        <div><strong data-i18n="产品|Product">Product</strong><a href="#capture" data-i18n="快速记录|Quick capture">Quick capture</a><a href="#tags" data-i18n="标签板|Tag Boards">Tag Boards</a><a href="#desktop" data-i18n="桌面端|Desktop">Desktop</a></div>
+        <div><strong data-i18n="信息|Information">Information</strong><a href="privacy.html" data-i18n="隐私政策|Privacy Policy">Privacy Policy</a><a href="support.html" data-i18n="使用支持|Support">Support</a></div>
+        <div><strong data-i18n="平台|Platforms">Platforms</strong><span>iPhone</span><span>iPad</span><span>Mac</span></div>
+      </div>
+      <div class="footer-bottom">
+        <span>Copyright © 2026 Thinkery</span>
+        <span>Designed for ideas.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

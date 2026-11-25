@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+  <script>
+    /* Pre-paint default: English, unless ?lang=zh or a saved Chinese choice. */
+    (function () {
+      var d = document.documentElement, q = null, s = null;
+      try { q = new URLSearchParams(location.search).get("lang"); } catch (e) {}
+      try { s = localStorage.getItem("thinkery-site-lang"); } catch (e) {}
+      var lang = (q === "zh" || q === "en") ? q : (s === "zh" || s === "en" ? s : "en");
+      d.lang = lang === "zh" ? "zh-Hans" : "en";
+      d.classList.add("js");
+      if (lang === "zh") {
+        d.classList.add("lang-pending");
+        setTimeout(function () { d.classList.remove("lang-pending"); }, 1200);
+      }
+    })();
+  </script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="隐私政策 — Thinkery 灵感工坊|Privacy Policy — Thinkery">Privacy Policy — Thinkery</title>
+<meta name="description" data-i18n-meta="Thinkery（灵感工坊）隐私政策：无账号、无服务器、无第三方统计与广告 SDK。笔记默认存在本机，开启同步后存入你本人的 iCloud 私有数据库。|Thinkery privacy policy: no accounts, no servers, no third-party analytics or ad SDKs. Notes stay on your device and sync only to your own iCloud private database." content="Thinkery privacy policy: no accounts, no servers, no third-party analytics or ad SDKs. Notes stay on your device and sync only to your own iCloud private database.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="assets/app-icon.png">
+<script src="script.js" defer></script>
+</head>
+<body class="legal-page" data-page="privacy">
+  <a class="skip-link" href="#main" data-i18n="跳到主要内容|Skip to content">Skip to content</a>
+  <header class="site-header" data-header>
+    <div class="nav-shell">
+      <a class="site-brand" href="index.html"><img src="assets/app-icon.png" alt="" width="28" height="28"><span>Thinkery</span></a>
+      <nav class="site-nav" aria-label="Main navigation" data-nav data-i18n-aria="主要导航|Main navigation">
+        <a href="index.html#capture" data-i18n="记录|Capture">Capture</a><a href="index.html#tags" data-i18n="标签板|Tag Boards">Tag Boards</a><a href="index.html#desktop" data-i18n="桌面端|Desktop">Desktop</a><a href="privacy.html" aria-current="page" data-i18n="隐私|Privacy">Privacy</a><a href="support.html" data-i18n="支持|Support">Support</a>
+      </nav>
+      <a class="nav-action" href="index.html#details"><span data-i18n="了解产品|Explore the app">Explore the app</span> <span aria-hidden="true">↗</span></a>
+      <button class="lang-switch" type="button" data-lang-switch data-i18n="EN|中文" data-i18n-aria="切换到英文|Switch to Chinese" aria-label="Switch to Chinese">中文</button>
+      <button class="menu-toggle" type="button" data-i18n-aria="打开导航|Open menu" aria-label="Open menu" aria-expanded="false" data-menu-toggle><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main class="legal-main" id="main">
+
+    <!-- ================= 中文 ================= -->
+    <div class="lang-panel" data-lang-panel="zh" lang="zh-Hans" hidden>
+      <section class="legal-hero">
+        <p class="section-index">PRIVACY / POLICY</p>
+        <h1>隐私政策</h1>
+        <p class="lead">这份政策说明 Thinkery（灵感工坊，以下称「本 App」）如何处理你的信息。一句话概括：<strong>我们没有你的账号，也没有存放你数据的服务器。</strong>你写下的内容留在你的设备上；只有当你自己打开 iCloud 同步时，它才会进入你本人的 iCloud 账户。</p>
+      </section>
+
+      <div class="legal-content">
+        <div class="legal-card">
+          <dl class="summary">
+            <dt>收集</dt><dd>不收集。本 App 没有账号体系，不会把你的内容传到我们的服务器</dd>
+            <dt>App Store</dt><dd>隐私标签标注为「未收集数据」，与本页所述一致</dd>
+            <dt>同步</dt><dd>可选，默认关闭；数据进入你本人的 iCloud 私有数据库</dd>
+            <dt>删除</dt><dd>App 内删除会同步到其他设备；如需连云端历史记录一起清除，可在系统设置中删除本 App 的 iCloud 数据</dd>
+          </dl>
+        </div>
+
+        <h2><span class="num">01</span>适用范围</h2>
+        <p>
+          本政策适用于 Thinkery 在 iPhone、iPad 与 Mac 上的客户端，以及本网站（以下简称「本站」）。
+          本站为纯静态页面，不设置 Cookie，不加载任何第三方脚本、字体或统计代码。
+        </p>
+        <p>
+          本 App 不是网络服务，不提供账号注册，也不代表你向任何第三方发布内容。
+        </p>
+
+        <h2><span class="num">02</span>我们不收集哪些信息</h2>
+        <p>为避免歧义，下面这些本 App 都不做：</p>
+        <ul>
+          <li>不要求注册，不收集手机号、邮箱、姓名、头像等身份信息；</li>
+          <li>不收集设备标识符、广告标识符（IDFA），不做设备指纹；</li>
+          <li>不收集位置信息，不读取通讯录、短信、通话记录；</li>
+          <li>不内置统计分析、崩溃上报、广告或归因 SDK；</li>
+          <li>不把你的笔记内容用于模型训练、画像或个性化推荐；</li>
+          <li>不向任何第三方出售、出租或交换你的信息。</li>
+        </ul>
+        <p>
+          Apple 作为平台方，可能按其<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">《Apple 隐私政策》</a>收集下载量、崩溃与使用情况等数据。
+          我们在 App Store Connect 中只能看到<strong>聚合后的结果</strong>，其中不包含你写下的任何内容，也无法定位到具体个人。
+        </p>
+
+        <h2><span class="num">03</span>你创建的内容存在哪里</h2>
+        <p>
+          笔记正文、标签、笔记内嵌的图片与录音、导入的文件附件、以及编辑历史，统一存放在本 App 在本机的数据文件中。
+        </p>
+        <h3>默认状态：只在本机</h3>
+        <p>
+          同步开关默认关闭。此时这些数据不会离开你的设备，本 App 除 App Store 的购买校验外不发起网络请求。
+        </p>
+        <h3>开启 iCloud 同步后</h3>
+        <p>
+          数据会通过 Apple 的 CloudKit 写入<strong>你本人的 iCloud 私有数据库</strong>。该数据库归属于你的 Apple 账户，
+          访问凭据由你的 Apple 账户掌握。<strong>我们不会主动读取其中的内容，也不会把它复制到我们自己的任何服务器</strong>——
+          我们没有这样的服务器。
+        </p>
+        <p>
+          iCloud 数据的物理存储位置由 Apple 依你的 Apple 账户所属地区决定。中国大陆地区账户的 iCloud 数据由云上贵州运营；
+          其他地区账户的数据可能存储在境外。这部分存储与传输由 Apple 依其条款与隐私政策提供，不由我们控制。
+        </p>
+        <p>
+          关闭同步开关只是停止继续同步，<strong>已经写入 iCloud 的数据不会因此自动删除</strong>；重新开启后，这些数据还会同步回来。
+          如果只想删除某篇笔记，在 App 内删除即可，删除状态会同步到其他设备；如果想清除本 App 在 iCloud 中的全部历史记录，
+          请到「系统设置 → 你的姓名 → iCloud → 管理账户储存空间」中删除本 App 的数据。
+          另外，同步开关按设备分别保存，每台设备都需要单独开启。
+        </p>
+
+        <h2><span class="num">04</span>设备权限</h2>
+        <table class="spec">
+          <tr>
+            <th>相机</th>
+            <td>仅在你主动选择「拍照」添加图片时调用，用于把照片放进当前这篇笔记。不拍照就不调用。</td>
+          </tr>
+          <tr>
+            <th>麦克风</th>
+            <td>仅在你主动选择「录音」时调用，用于录制语音备忘并存入当前笔记。不录音就不调用。</td>
+          </tr>
+          <tr>
+            <th>照片与文件</th>
+            <td>使用系统提供的选择器（Photos Picker / 文件选择器），只读取你亲手选中的那一项，不申请整个相册或文件系统的访问权限。</td>
+          </tr>
+        </table>
+        <p>
+          以上权限都可以随时在系统设置中关闭。关闭后对应功能不可用，其余功能不受影响，
+          已经写入笔记的内容也不会被删除。
+        </p>
+
+        <h2><span class="num">05</span>购买与付款</h2>
+        <p>
+          本 App 采用一次性买断。购买、付款、退款与恢复购买全部由 Apple 通过 App Store 处理。
+          <strong>我们不会收到也不会存储你的支付卡号、账单地址或 Apple 账户密码</strong>；
+          我们只能收到 App Store 返回的交易凭据，用于判断是否已解锁，以及在换机后恢复购买。
+        </p>
+
+        <h2><span class="num">06</span>第三方</h2>
+        <p>
+          本 App 不集成任何第三方分析、广告、推送、社交登录或数据服务 SDK。唯一涉及的第三方是 Apple：
+          作为 App 分发与 iCloud 存储的提供方，Apple 依其自身条款处理相关数据。
+        </p>
+
+        <h2><span class="num">07</span>保留与删除</h2>
+        <ul>
+          <li><strong>删除单篇笔记</strong>：在 App 内删除后，本机不再显示；若 iCloud 同步开启，删除状态会同步到其他设备，这篇笔记也会从那些设备中移除。为保留多设备同步所需的历史，已经写入 iCloud 的旧快照不会因单篇删除被逐条物理清除。</li>
+          <li><strong>卸载 App</strong>：本机数据随之清除；已经写入 iCloud 的数据不会因卸载而删除。</li>
+          <li><strong>彻底清除云端历史记录</strong>：如需把 iCloud 里本 App 的全部记录一并清掉，到「系统设置 → 你的姓名 → iCloud → 管理账户储存空间」中删除本 App 的数据（见第 03 节提示）。只有在这种情况下才需要这样做；普通删除笔记无需这一步。</li>
+          <li><strong>我们这边</strong>：我们没有留存你的任何数据，因此不存在「向我们申请删除」这一步。</li>
+        </ul>
+        <p>
+          在删除之前，你可以随时用 App 内的导出功能，把全部笔记打包成 Markdown 文档（含图片与附件）保存到本地或你自己的网盘。
+        </p>
+
+        <h2><span class="num">08</span>你的权利</h2>
+        <p>
+          由于数据始终在你的设备与你的 iCloud 账户内，查阅、复制、更正、删除、撤回同意这些操作全部可以在 App 内直接完成，
+          无需向我们提出申请：
+        </p>
+        <ul>
+          <li>查阅与更正：打开笔记直接查看、修改；</li>
+          <li>复制与转移：设置中的导出功能生成 Markdown 包；</li>
+          <li>删除：删除笔记，或卸载 App；</li>
+          <li>撤回同意：关闭 iCloud 同步开关，或关闭相机 / 麦克风权限。</li>
+        </ul>
+        <p>
+          本 App 不按年龄限制使用；数据只在本机与你自己的 iCloud 账户中。监护人如需清除孩子设备上的内容，可直接在设备上删除笔记或卸载 App（见第 07 节）——我们无法远程访问或清除这些数据。
+        </p>
+      </div>
+    </div>
+
+    <!-- ================= English ================= -->
+    <div class="lang-panel" data-lang-panel="en" lang="en">
+      <section class="legal-hero">
+        <p class="section-index">PRIVACY / POLICY</p>
+        <h1>Privacy Policy</h1>
+        <p class="lead">This policy explains how Thinkery handles your information. In short: <strong>we have no user accounts and no servers that store your data.</strong> What you write stays on your device. It reaches the cloud only if you turn on iCloud sync yourself, and then it goes to <em>your own</em> iCloud account.</p>
+      </section>
+
+      <div class="legal-content">
+        <div class="legal-card">
+          <dl class="summary">
+            <dt>Collected</dt><dd>None. Thinkery has no account system and never sends your content to our servers</dd>
+            <dt>App Store</dt><dd>Privacy label: "Data Not Collected", consistent with this policy</dd>
+            <dt>Sync</dt><dd>Optional, off by default; data goes to your own iCloud private database</dd>
+            <dt>Deletion</dt><dd>Deleting a note in the app syncs to your other devices; to erase all cloud history, remove this app's data in system settings</dd>
+          </dl>
+        </div>
+
+        <h2><span class="num">01</span>Scope</h2>
+        <p>
+          This policy applies to the Thinkery clients for iPhone, iPad, and Mac, and to this website (the "Site").
+          The Site is a static page: it sets no cookies and loads no third-party scripts, fonts, or analytics.
+        </p>
+        <p>
+          Thinkery is not a web service. It offers no account registration and never publishes content on your behalf.
+        </p>
+
+        <h2><span class="num">02</span>What we do not collect</h2>
+        <p>To be explicit, the app does none of the following:</p>
+        <ul>
+          <li>Require registration, or collect your phone number, email address, name, or profile photo;</li>
+          <li>Collect device identifiers or advertising identifiers (IDFA), or fingerprint your device;</li>
+          <li>Collect location data, or read your contacts, messages, or call history;</li>
+          <li>Bundle analytics, crash-reporting, advertising, or attribution SDKs;</li>
+          <li>Use your notes for model training, profiling, or personalized recommendations;</li>
+          <li>Sell, rent, or trade your information to any third party.</li>
+        </ul>
+        <p>
+          Apple, as the platform provider, may collect download, crash, and usage data under its own <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Privacy Policy</a>.
+          In App Store Connect we can see only <strong>aggregated results</strong>, which never include anything you wrote and cannot be traced back to you.
+        </p>
+
+        <h2><span class="num">03</span>Where your content lives</h2>
+        <p>
+          Note text, tags, embedded images and recordings, imported file attachments, and edit history are all stored in the app's local data container on your device.
+        </p>
+        <h3>Default: on your device only</h3>
+        <p>
+          Sync is off by default. In this state, your data never leaves your device, and the app makes no network requests beyond App Store purchase validation.
+        </p>
+        <h3>When iCloud sync is on</h3>
+        <p>
+          Data is written via Apple CloudKit to <strong>your own iCloud private database</strong>. That database belongs to your Apple Account and its access credentials are held by you. <strong>We do not read its contents and do not copy them to any server of ours</strong> — we have no such server.
+        </p>
+        <p>
+          Apple determines where iCloud data is physically stored based on your Apple Account region. Depending on where your account is registered, your data may be stored in data centers outside your country or region. Storage and transmission are provided by Apple under its own terms and privacy policy, and are outside our control.
+        </p>
+        <p>
+          Turning sync off only stops further syncing; <strong>data already in iCloud is not deleted</strong> and will sync back when you turn sync on again. To delete a single note, just delete it in the app — the deletion syncs to your other devices. To erase all of this app's history in iCloud, remove this app's data under <strong>Settings → your name → iCloud → Manage Account Storage</strong>. The sync switch is saved separately on each device and must be turned on on every device.
+        </p>
+
+        <h2><span class="num">04</span>Device permissions</h2>
+        <table class="spec">
+          <tr>
+            <th>Camera</th>
+            <td>Used only when you choose to take a photo to add to a note. Never used otherwise.</td>
+          </tr>
+          <tr>
+            <th>Microphone</th>
+            <td>Used only when you choose to record a voice memo for a note. Never used otherwise.</td>
+          </tr>
+          <tr>
+            <th>Photos and files</th>
+            <td>Accessed through the system pickers (Photos Picker / document picker). Only the item you explicitly select is read; the app does not request access to your entire photo library or file system.</td>
+          </tr>
+        </table>
+        <p>
+          All of these permissions can be revoked at any time in system settings. The related feature then stops working, the rest of the app is unaffected, and nothing already written into your notes is deleted.
+        </p>
+
+        <h2><span class="num">05</span>Purchases and payments</h2>
+        <p>
+          Thinkery is a one-time purchase. Purchases, payments, refunds, and restoring purchases are handled entirely by Apple through the App Store. <strong>We never receive or store your card details, billing address, or Apple Account password.</strong> We receive only the transaction receipt returned by the App Store, so we can tell whether the app is unlocked and restore your purchase on a new device.
+        </p>
+
+        <h2><span class="num">06</span>Third parties</h2>
+        <p>
+          The app integrates no third-party analytics, advertising, push, social login, or data-service SDKs. The only third party involved is Apple, as the provider of app distribution and iCloud storage, handling that data under its own terms.
+        </p>
+
+        <h2><span class="num">07</span>Retention and deletion</h2>
+        <ul>
+          <li><strong>Deleting a single note:</strong> once deleted in the app, it disappears locally. If iCloud sync is on, the deletion syncs to your other devices and the note disappears there too. To preserve the history needed for multi-device sync, older snapshots already in iCloud are not individually erased.</li>
+          <li><strong>Uninstalling the app:</strong> removes local data; data already in iCloud is not deleted by uninstalling.</li>
+          <li><strong>Erasing all cloud history:</strong> to remove all of this app's records from iCloud, delete the app's data under Settings → your name → iCloud → Manage Account Storage (see section 03). This is needed only for a complete wipe — deleting a note normally requires no such step.</li>
+          <li><strong>On our side:</strong> we retain no data of yours, so there is no deletion request to send us.</li>
+        </ul>
+        <p>
+          Before deleting anything, you can export all your notes as a Markdown package — including images and attachments — to local storage or your own cloud drive at any time.
+        </p>
+
+        <h2><span class="num">08</span>Your rights</h2>
+        <p>
+          Because your data always stays in your devices and your own iCloud account, you can access, copy, correct, delete, and withdraw consent directly in the app, with no request to us:
+        </p>
+        <ul>
+          <li>Access and correction: open a note to view and edit it;</li>
+          <li>Copy and transfer: use the export feature in Settings to generate a Markdown package;</li>
+          <li>Deletion: delete a note, or uninstall the app;</li>
+          <li>Withdraw consent: turn off iCloud sync, or revoke camera / microphone access.</li>
+        </ul>
+        <p>
+          The app has no age restriction. Your data lives only on your device and in your own iCloud account. If a guardian needs to remove content from a child's device, they can delete notes or uninstall the app directly on that device (see section 07); we cannot access or erase that data remotely.
+        </p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="legal-footer">
+    <div class="footer-row"><span>© 2026 Thinkery</span><span class="spacer"></span><a href="index.html" data-i18n="产品首页|Product">Product</a><a href="support.html" data-i18n="使用支持|Support">Support</a></div>
+  </footer>
+</body>
+</html>

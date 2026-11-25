@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>
+    /* Pre-paint default: English, unless ?lang=zh or a saved Chinese choice. */
+    (function () {
+      var d = document.documentElement, q = null, s = null;
+      try { q = new URLSearchParams(location.search).get("lang"); } catch (e) {}
+      try { s = localStorage.getItem("thinkery-site-lang"); } catch (e) {}
+      var lang = (q === "zh" || q === "en") ? q : (s === "zh" || s === "en" ? s : "en");
+      d.lang = lang === "zh" ? "zh-Hans" : "en";
+      d.classList.add("js");
+      if (lang === "zh") {
+        d.classList.add("lang-pending");
+        setTimeout(function () { d.classList.remove("lang-pending"); }, 1200);
+      }
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fafafb">
+  <title data-i18n="支持 — Thinkery 灵感工坊|Support — Thinkery">Support — Thinkery</title>
+  <meta name="description" data-i18n-meta="Thinkery（灵感工坊）使用支持：iCloud 同步、导出备份、恢复购买、权限设置与支持系统。|Thinkery support: iCloud sync, export and backup, restoring purchases, permissions, and supported systems." content="Thinkery support: iCloud sync, export and backup, restoring purchases, permissions, and supported systems.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/app-icon.png">
+  <script src="script.js" defer></script>
+</head>
+<body class="legal-page" data-page="support">
+  <a class="skip-link" href="#main" data-i18n="跳到主要内容|Skip to content">Skip to content</a>
+  <header class="site-header" data-header>
+    <div class="nav-shell">
+      <a class="site-brand" href="index.html" aria-label="Thinkery home" data-i18n-aria="Thinkery 首页|Thinkery home"><img src="assets/app-icon.png" alt="" width="28" height="28"><span>Thinkery</span></a>
+      <nav class="site-nav" aria-label="Main navigation" data-nav data-i18n-aria="主要导航|Main navigation">
+        <a href="index.html#capture" data-i18n="记录|Capture">Capture</a><a href="index.html#tags" data-i18n="标签板|Tag Boards">Tag Boards</a><a href="index.html#desktop" data-i18n="桌面端|Desktop">Desktop</a><a href="privacy.html" data-i18n="隐私|Privacy">Privacy</a><a href="support.html" aria-current="page" data-i18n="支持|Support">Support</a>
+      </nav>
+      <a class="nav-action" href="index.html#details"><span data-i18n="了解产品|Explore the app">Explore the app</span> <span aria-hidden="true">↗</span></a>
+      <button class="lang-switch" type="button" data-lang-switch data-i18n="EN|中文" data-i18n-aria="切换到英文|Switch to Chinese" aria-label="Switch to Chinese">中文</button>
+      <button class="menu-toggle" type="button" data-i18n-aria="打开导航|Open menu" aria-label="Open menu" aria-expanded="false" data-menu-toggle><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main class="legal-main" id="main">
+
+    <!-- ================= 中文 ================= -->
+    <div class="lang-panel" data-lang-panel="zh" lang="zh-Hans" hidden>
+      <section class="legal-hero">
+        <p class="section-index">THINKERY / SUPPORT</p>
+        <h1>遇到问题，<br>从这里开始。</h1>
+        <p class="lead">关于同步、导出、购买、权限与支持系统的常见问题，都可以在这里找到答案。</p>
+      </section>
+
+      <div class="legal-content">
+        <h2><span class="num">Q1</span>打开了 iCloud 同步，另一台设备上没有出现笔记</h2>
+        <p>按顺序排查，绝大多数是前三项：</p>
+        <ul>
+          <li><strong>开关是按设备分别保存的。</strong>新设备上也要单独打开一次，不会自动跟着过来。</li>
+          <li><strong>切换开关后需要重新打开 App 才生效。</strong>设置页会提示「将在重新打开 App 后生效」。</li>
+          <li><strong>系统层要先开着 iCloud。</strong>到「系统设置 → 你的姓名 → iCloud」确认已登录，且本 App 的开关是打开的。</li>
+          <li><strong>给它一点时间。</strong>导入是渐进的，首次同步<span class="hl">可能需要几秒到几分钟</span>，期间请保持 App 在前台。</li>
+          <li><strong>还不行，就彻底退出 App 再打开。</strong>从后台完全划掉 App（不只是回到主屏幕），再重新打开，会再触发一次同步检查。</li>
+        </ul>
+        <p>如果设置页出现红色提示，展开「查看原因与操作」，里面有对应原因与「复制诊断信息」。</p>
+
+        <h2><span class="num">Q2</span>关掉同步，云端的数据会消失吗</h2>
+        <p>不会。关闭开关只是停止继续同步，已经写入 iCloud 的数据仍然留在你的账户里，重开开关就会回来。如果只想删除某篇笔记，在 App 内删除即可，删除状态会同步到其他设备；如果想清除本 App 在 iCloud 中的全部历史记录，需到「系统设置 → 你的姓名 → iCloud → 管理账户储存空间」中删除本 App 的数据。</p>
+
+        <h2><span class="num">Q3</span>换手机 / 换电脑，笔记怎么迁过去</h2>
+        <p>两种方式，任选其一：</p>
+        <ul>
+          <li><strong>走 iCloud</strong>：两台设备登录同一个 Apple 账户，都打开同步开关，等首次同步完成。</li>
+          <li><strong>走导出</strong>：旧设备上导出 Markdown 包（含图片与附件），存到「文件」或网盘，再在新设备上导入。</li>
+        </ul>
+        <div class="note"><p><strong>为了安全起见，建议先备份再换机。</strong>换机前请在旧设备上导出一次 Markdown 包并妥善保存——这是唯一不依赖网络、也不依赖同步是否顺利的保险。确认新设备已导入成功，再考虑清理旧设备。</p></div>
+
+        <h2><span class="num">Q4</span>换机后功能没解锁 / 怎么恢复购买</h2>
+        <p>本 App 为一次性买断，购买记录绑定你的 Apple 账户。在新设备上确认登录同一个 Apple 账户，到买断页点击「恢复购买」即可，不会重复扣费。若仍无法恢复，请确认 App Store 处于登录状态后再试。</p>
+
+        <h2><span class="num">Q5</span>拍照 / 录音用不了</h2>
+        <p>到「系统设置 → 隐私与安全性 → 相机 / 麦克风」确认本 App 已开启。如果之前点过「不允许」，在这里重新打开即可，App 不会因此丢失任何已有笔记。</p>
+
+        <h2><span class="num">Q6</span>导出的文件在哪里</h2>
+        <p>导出时可选择保存到本地或 iCloud Drive。导出内容为 Markdown 文档与附件文件夹，任何支持 Markdown 的编辑器都能打开，不依赖本 App。</p>
+
+        <h2><span class="num">Q7</span>支持哪些系统</h2>
+        <p>iPhone 与 iPad 需 iOS / iPadOS 17.6 或更高；Mac 需 macOS 15.4 或更高。iPhone 版为竖屏布局，iPad 与 Mac 支持更宽的排版。</p>
+
+      </div>
+    </div>
+
+    <!-- ================= English ================= -->
+    <div class="lang-panel" data-lang-panel="en" lang="en">
+      <section class="legal-hero">
+        <p class="section-index">THINKERY / SUPPORT</p>
+        <h1>Stuck?<br>Start here.</h1>
+        <p class="lead">Answers to common questions about syncing, exporting, purchases, permissions, and supported systems.</p>
+      </section>
+
+      <div class="legal-content">
+        <h2><span class="num">Q1</span>I turned on iCloud sync, but my notes aren't showing up on another device</h2>
+        <p>Work through these in order — nearly every case is one of the first three:</p>
+        <ul>
+          <li><strong>The switch is saved per device.</strong> Turn it on separately on the new device; it won't carry over by itself.</li>
+          <li><strong>Changing the switch needs an app restart.</strong> Settings shows "Takes effect after reopening the app."</li>
+          <li><strong>iCloud must be on at the system level.</strong> Go to Settings → your name → iCloud and confirm you're signed in and this app's switch is on.</li>
+          <li><strong>Give it a moment.</strong> Importing is gradual — the first sync <span class="hl">can take anywhere from a few seconds to a few minutes</span>. Keep the app in the foreground.</li>
+          <li><strong>Still nothing? Force-quit and reopen the app.</strong> Swipe it fully away from the app switcher (not just back to the Home Screen), then open it again to trigger another sync check.</li>
+        </ul>
+        <p>If Settings shows a red warning, expand "View reason and actions" — it lists the cause along with a "Copy diagnostic info" option.</p>
+
+        <h2><span class="num">Q2</span>If I turn off sync, will my cloud data be deleted?</h2>
+        <p>No. Turning the switch off only stops further syncing; data already written to iCloud stays in your account and comes back when you turn sync on again. To delete a single note, just delete it in the app — the deletion syncs to your other devices. To erase all of this app's cloud history, remove the app's data under Settings → your name → iCloud → Manage Account Storage.</p>
+
+        <h2><span class="num">Q3</span>How do I move my notes to a new phone or Mac?</h2>
+        <p>Either method works:</p>
+        <ul>
+          <li><strong>Via iCloud</strong>: sign in to the same Apple account on both devices, turn on sync on each, and wait for the first sync to finish.</li>
+          <li><strong>Via export</strong>: export a Markdown package (including photos and attachments) on the old device, save it to Files or cloud storage, then import it on the new device.</li>
+        </ul>
+        <div class="note"><p><strong>To be safe, back up before switching devices.</strong> Before switching devices, export a Markdown package on the old one and keep it somewhere safe — it's the only fallback that depends on neither the network nor whether sync behaved. Once the new device has imported successfully, then consider wiping the old one.</p></div>
+
+        <h2><span class="num">Q4</span>Features aren't unlocked after switching devices / how do I restore my purchase?</h2>
+        <p>Thinkery is a one-time purchase tied to your Apple account. Sign in to the same Apple account on the new device and tap "Restore Purchase" on the unlock page — you won't be charged again. If it still doesn't restore, make sure the App Store is signed in and try once more.</p>
+
+        <h2><span class="num">Q5</span>Camera or recording doesn't work</h2>
+        <p>Go to Settings → Privacy & Security → Camera / Microphone and make sure Thinkery is enabled. If you previously chose "Don't Allow", turn it back on there — no existing notes are lost either way.</p>
+
+        <h2><span class="num">Q6</span>Where do exported files go?</h2>
+        <p>You can save exported files locally or to iCloud Drive. The export contains Markdown documents and an attachments folder — any Markdown editor can open them, with no need for this app.</p>
+
+        <h2><span class="num">Q7</span>Which operating systems are supported?</h2>
+        <p>iPhone and iPad require iOS / iPadOS 17.6 or later; Mac requires macOS 15.4 or later. iPhone uses a portrait layout, while iPad and Mac offer wider layouts.</p>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="legal-footer">
+    <div class="footer-row"><span>© 2026 Thinkery</span><span class="spacer"></span><a href="index.html" data-i18n="产品首页|Home">Home</a><a href="privacy.html" data-i18n="隐私政策|Privacy Policy">Privacy Policy</a></div>
+  </footer>
+</body>
+</html>
