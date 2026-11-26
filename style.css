@@ -641,9 +641,6 @@ html:lang(en) .privacy-points strong { letter-spacing: -.035em; }
 @media (max-width: 760px) {
   html:lang(en) .hero-copy { width: calc(100vw - 32px); }
   html:lang(en) .hero h1 { font-size: clamp(44px, 12.5vw, 58px); line-height: 1.06; letter-spacing: -.035em; }
-  @media (max-width: 350px) {
-    html:lang(en) .hero h1 { font-size: 38px; letter-spacing: -.03em; }
-  }
   html:lang(en) .hero-lead { line-height: 1.55; }
   html:lang(en) .manifesto h2,
   html:lang(en) .section-heading h2,
@@ -654,6 +651,10 @@ html:lang(en) .privacy-points strong { letter-spacing: -.035em; }
   html:lang(en) .rediscover h2 { line-height: 1.1; letter-spacing: -.032em; }
   html:lang(en) .craft-card h3 { font-size: 34px; line-height: 1.12; letter-spacing: -.028em; }
   html:lang(en) .legal-hero h1 { line-height: 1.08; letter-spacing: -.035em; }
+}
+
+@media (max-width: 350px) {
+  html:lang(en) .hero h1 { font-size: 38px; letter-spacing: -.03em; }
 }
 
 @media (prefers-reduced-motion: reduce) {
