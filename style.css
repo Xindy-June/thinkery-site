@@ -355,6 +355,8 @@ html.lang-pending body { visibility: hidden; }
 .closing .micro-label { margin-bottom: 25px; }
 .closing h2 { font-size: clamp(48px, 5.4vw, 76px); }
 .mobile-break { display: none; }
+.space-en { display: none; }
+html:lang(en) .space-en { display: inline; }
 .closing .button { margin-top: 45px; }
 
 /* Footer */
@@ -403,7 +405,6 @@ html:lang(en) .hero-wordmark {
 }
 html:lang(en) .hero-copy { width: min(1100px, calc(100vw - 48px)); }
 html:lang(en) .hero h1 { font-size: clamp(56px, 6.2vw, 88px); font-weight: 600; line-height: 1.04; letter-spacing: -.04em; }
-html:lang(en) .hero-rest::before { content: " "; }
 html:lang(en) .hero-lead { line-height: 1.55; letter-spacing: -.018em; }
 html:lang(en) .manifesto h2,
 html:lang(en) .section-heading h2,
@@ -640,8 +641,9 @@ html:lang(en) .privacy-points strong { letter-spacing: -.035em; }
 @media (max-width: 760px) {
   html:lang(en) .hero-copy { width: calc(100vw - 32px); }
   html:lang(en) .hero h1 { font-size: clamp(44px, 12.5vw, 58px); line-height: 1.06; letter-spacing: -.035em; }
-  html:lang(en) .hero-rest { display: block; }
-  html:lang(en) .hero-rest::before { content: none; }
+  @media (max-width: 350px) {
+    html:lang(en) .hero h1 { font-size: 38px; letter-spacing: -.03em; }
+  }
   html:lang(en) .hero-lead { line-height: 1.55; }
   html:lang(en) .manifesto h2,
   html:lang(en) .section-heading h2,
